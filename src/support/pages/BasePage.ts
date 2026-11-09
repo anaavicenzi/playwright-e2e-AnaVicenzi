@@ -5,11 +5,11 @@ export default abstract class BasePage {
     this.page = page;
   }
 
-  async verifyTitle(title: string): Promise<void> {
+  async verifyTitle(title: string | RegExp): Promise<void> {
     await expect(this.page).toHaveTitle(title);
   }
 
-  async verifyUrl(url: string): Promise<void> {
+  async verifyUrl(url: string | RegExp): Promise<void> {
     await expect(this.page).toHaveURL(url);
   }
 }
